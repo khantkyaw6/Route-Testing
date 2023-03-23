@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import PrivateRoutes from '../routes/PrivateRoutes';
-import Navbar from '../components/Navbar';
-import Login from './Login';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { useState } from "react";
+import PrivateRoutes from "../routes/PrivateRoutes";
+import Navbar from "../components/Navbar";
+import Login from "./Login";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 const Layout = () => {
   const [token, setToken] = useState(false);
@@ -17,10 +17,8 @@ const Layout = () => {
       ) : (
         <>
           <Routes>
-            <Route
-              path='/login'
-              element={<Navigate to='/login' element={<Login />} />}
-            />
+            <Route path='/login' element={<Login />} />
+            <Route path='*' element={<Navigate to='/login' />} />
           </Routes>
         </>
       )}

@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from 'react-router-dom';
-import Dashboard from '../pages/Dashboard';
-import Booking from '../pages/Booking';
-import SellCar from '../pages/SellCar';
-import Setting from '../pages/Setting';
+} from "react-router-dom";
+import Dashboard from "../pages/Dashboard";
+import Booking from "../pages/Booking";
+import SellCar from "../pages/SellCar";
+import Setting from "../pages/Setting";
 
 const PrivateRoutes = () => {
   return (
@@ -21,6 +21,7 @@ const PrivateRoutes = () => {
       <Route path='/booking' element={<Booking />} />
       <Route path='/sellcar' element={<SellCar />} />
       <Route path='/setting' element={<Setting />} />
+      <Route path='/*' element={<Navigate to='/dashboard' />} />
     </Routes>
   );
 };
